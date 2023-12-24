@@ -1,0 +1,3 @@
+2023-12-24 20:18:30.585647Z jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FLIGHTS" not found; SQL statement:
+SELECT * FROM flights WHERE departure_airport = ? AND arrival_airport = ? [42102-224]
