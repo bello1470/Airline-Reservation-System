@@ -5,9 +5,11 @@ import org.bellotech.Airline.Reservation.System.models.Flight;
 import org.bellotech.Airline.Reservation.System.services.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class FlightController {
@@ -26,8 +28,16 @@ public class FlightController {
    public List<Flight> searchFlight(@RequestParam String arrivalAirport,
                                    @RequestParam String departureAirport){
 
-        return flightService.searchFlightByarrivalAndDeparture(arrivalAirport,departureAirport);
+
+        return flightService.searchFlightArrivalAndDeparture(arrivalAirport,departureAirport);
    }
 
+   @GetMapping("/flightId/{id}")
+public Optional<Flight> getFlightById(
+        @PathVariable("id") Long flightId){
+
+
+        return flightService.getFlightById(flightId);
+   }
 
 }

@@ -17,7 +17,7 @@ public class Flight {
 
     @Id
     @GeneratedValue(strategy  = GenerationType.SEQUENCE)
-    private Long id;
+    private Long flightId;
     @Column(name = "flight_number")
     private Long flightNumber;
     @Column(name = "departure_airport")

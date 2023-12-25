@@ -11,9 +11,8 @@ import java.util.List;
 @Repository
 public interface FlightRepository extends JpaRepository<Flight , Long> {
 
-    @Query(value = "SELECT * FROM flight WHERE departure_airport = ?1 AND arrival_airport = ?2",
+    @Query(value = "SELECT * FROM flight WHERE arrival_airport = ?1 AND departure_airport = ?2",
             nativeQuery = true)
-    List<Flight> searchFlightByarrivalAndDeparture(String arrivalAirport, String departureAirport);
-
+    List<Flight> searchFlightArrivalAndDeparture(String arrivalAirport, String departureAirport);
 
 }

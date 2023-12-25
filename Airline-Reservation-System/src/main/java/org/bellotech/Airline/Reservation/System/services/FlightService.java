@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -21,9 +22,15 @@ public class FlightService {
      return flightRepository.save(flight);
    }
 
- public List<Flight> searchFlightByarrivalAndDeparture(String arrivalAirport, String departureAirport){
+ public List<Flight> searchFlightArrivalAndDeparture(String arrivalAirport, String departureAirport) {
 
-       return  flightRepository.searchFlightByarrivalAndDeparture(arrivalAirport,departureAirport);
+
+       return flightRepository.searchFlightArrivalAndDeparture(arrivalAirport,departureAirport);
  }
 
+
+ public Optional<Flight> getFlightById(Long flightId){
+
+return flightRepository.findById(flightId);
+ }
 }
