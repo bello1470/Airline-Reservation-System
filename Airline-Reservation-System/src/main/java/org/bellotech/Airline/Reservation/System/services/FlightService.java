@@ -28,9 +28,14 @@ public class FlightService {
        return flightRepository.searchFlightArrivalAndDeparture(arrivalAirport,departureAirport);
  }
 
+ public List<Flight> getAllFlight( ){
+
+       return flightRepository.findAll();
+ }
 
  public Optional<Flight> getFlightById(Long flightId){
 
 return flightRepository.findById(flightId);
  }
+
 }
