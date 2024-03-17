@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("api/flightBooking")
 public class FlightController {
 
     @Autowired
@@ -63,6 +64,8 @@ public ResponseEntity<?> getFlightById(@PathVariable Long flightId){
         if (flightOptional.isPresent()){
 
             Flight flight = flightOptional.get();
+
+
 
 
             return new ResponseEntity<>(flight.getSeatAvailable() > 0, HttpStatus.OK);
