@@ -1,6 +1,7 @@
 package org.bellotech.Airline.Reservation.System.services;
 
 
+import lombok.AllArgsConstructor;
 import org.bellotech.Airline.Reservation.System.models.Flight;
 import org.bellotech.Airline.Reservation.System.repositories.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +12,12 @@ import java.util.Optional;
 
 
 @Service
+@AllArgsConstructor
 public class FlightService {
 
 
-   @Autowired
-  private FlightRepository flightRepository;
+
+  private final FlightRepository flightRepository;
 
    public Flight save(Flight flight){
 
