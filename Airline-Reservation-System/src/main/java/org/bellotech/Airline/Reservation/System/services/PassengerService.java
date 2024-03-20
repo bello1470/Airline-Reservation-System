@@ -1,6 +1,7 @@
 package org.bellotech.Airline.Reservation.System.services;
 
 
+import lombok.AllArgsConstructor;
 import org.bellotech.Airline.Reservation.System.models.Passenger;
 import org.bellotech.Airline.Reservation.System.repositories.PassengerRepository;
 import org.jetbrains.annotations.NotNull;
@@ -11,10 +12,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class PassengerService {
 
-    @Autowired
-    private PassengerRepository passengerRepository;
+
+    private final PassengerRepository passengerRepository;
 
     public Passenger savePassenger (@NotNull Passenger passenger){
 
