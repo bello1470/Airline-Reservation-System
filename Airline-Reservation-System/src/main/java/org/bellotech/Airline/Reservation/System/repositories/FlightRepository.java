@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 
-@Repository
+
 public interface FlightRepository extends JpaRepository<Flight , Long> {
 
     @Query(value = "SELECT * FROM flight WHERE arrival_airport = ?1 AND departure_airport = ?2",
